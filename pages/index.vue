@@ -47,7 +47,7 @@ onUnmounted(() => {
   window.removeEventListener("scroll", scrollAnimation);
 });
 </script>
-<style></style>
+
 <template>
   <div>
     <head>
@@ -77,30 +77,33 @@ onUnmounted(() => {
     </header>
 
     <main>
-      <div id="mainvisual"><div style="" alt="photo" /></div>
+      <div id="mainvisual">
+        <img :src="require('@/assets/12345.jpg')" alt="photo" />
+      </div>
 
       <h2 class="section-title">About</h2>
       <div class="content">
         <div class="wrapper">
-          <div class="delayScroll">
-          </div>
+          <div class="delayScroll"></div>
         </div>
         <div class="text">
           <h3 class="content-title">Lab</h3>
-          <img :src="require('@/assets/12345.jpg')" />
+          <div class="about">
+            <img :src="require('@/assets/neko.jpg')" />
+          </div>
           <p>
             こちらはLabが運営するメディアです。<br />
             Web制作のために参考になればぜひ使ってください。
           </p>
         </div>
       </div>
-      
+
       <section id="world" class="headline">
         <h2 id="profile" class="section-title">プログラミングの世界</h2>
         <ul>
           <li>
             <div class="delayScroll">
-              <img :src="require('@/assets/Design.jpg')" />
+              <img :src="require('@/assets/onair.jpg')" />
             </div>
             <h3 class="content-title">Web制作</h3>
             <p>
@@ -111,7 +114,7 @@ onUnmounted(() => {
           </li>
           <li>
             <div class="delayScroll">
-              <img src="https://d.kuku.lu/6ezh2bxvc" />
+              <img :src="require('@/assets/Design.jpg')" />
             </div>
             <h3 class="content-title">Webデザイン</h3>
             <p>
@@ -199,7 +202,7 @@ li a:hover {
   letter-spacing: 3px;
 }
 
-.hide {
+hide {
   top: 70px;
 }
 
@@ -210,9 +213,6 @@ li a:hover {
   text-align: center;
 }
 
-/*-------------------------------------------
-ヘッダー
--------------------------------------------*/
 .wrapper {
   justify-content: space-between;
   align-items: center;
@@ -236,30 +236,24 @@ li a:hover {
   opacity: 0.7;
 }
 
-/*-------------------------------------------
-Mainvisual
--------------------------------------------*/
-#mainvisual {
+.mainvisual {
   margin-bottom: 80px;
 }
 
-#mainvisual img {
+.mainvisual img {
   width: 100%;
   max-width: 1920px;
   height: 600px;
   object-fit: cover;
 }
 
-/*-------------------------------------------
-About
--------------------------------------------*/
-#about .content {
+.about content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#about img {
+.about img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -286,7 +280,7 @@ About
   }
 }
 
-#about .text {
+.about text {
   text-align: left;
 }
 
@@ -318,34 +312,34 @@ h2.font_2 a {
 /*-------------------------------------------
 SP
 -------------------------------------------*/
-/* @media screen and (max-width: 700px) { */
-/*-------------------------------------------
+@media screen and (max-width: 700px) {
+  /*-------------------------------------------
   About
   -------------------------------------------*/
-#about .content {
-  flex-direction: column;
-}
-.section-title {
-  font-size: 30px;
-  border-left: 0.3em solid rgb(0, 0, 0);
-  padding-bottom: 0.5em;
-}
+  .about content {
+    flex-direction: column;
+  }
+  .section-title {
+    font-size: 30px;
+    border-left: 0.3em solid rgb(0, 0, 0);
+    padding-bottom: 0.5em;
+  }
 
-#about img {
-  margin-right: 0;
-}
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  cursor: pointer;
-  padding: 10px;
-  margin-right: -10px;
-}
+  .about img {
+    margin-right: 0;
+  }
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: -10px;
+  }
 
-nav {
-  position: relative;
-  padding: 15px 20px;
+  nav {
+    position: relative;
+    padding: 15px 20px;
+  }
 }
-/* } */
 </style>
