@@ -78,19 +78,18 @@ onUnmounted(() => {
 
     <main>
       <div id="mainvisual">
-        <img :src="require('@/assets/12345.jpg')" alt="photo" />
+        <img :src="require('@/assets/libray.jpg')" alt="photo" />
       </div>
 
       <h2 class="section-title">About</h2>
       <div class="content">
         <div class="wrapper">
           <div class="delayScroll"></div>
+          <img :src="require('@/assets/neko.jpg')" />
         </div>
         <div class="text">
           <h3 class="content-title">Lab</h3>
-          <div class="about">
-            <img :src="require('@/assets/neko.jpg')" />
-          </div>
+
           <p>
             こちらはLabが運営するメディアです。<br />
             Web制作のために参考になればぜひ使ってください。
@@ -251,7 +250,7 @@ hide {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .about img {
   width: 150px;
